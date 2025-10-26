@@ -1,0 +1,102 @@
+/* Google AI Studio Hero - CSS Variables */
+:root {
+    /* Base Colors */
+    --hero-bg: #0F1112;
+    --tile-1: #181A1B;
+    --tile-2: #262829;
+    
+    /* Opacity Controls */
+    --grid-opacity: 0.75;
+    --whirl-opacity-left: 0.16;
+    --whirl-opacity-right: 0.12;
+    
+    /* Typography Colors */
+    --headline: #E6E9EA;
+    --body: #9EA3A4;
+    --check-color: rgba(255, 255, 255, 0.12);
+    
+    /* Brand Accent */
+    --brand-gold: #FFD700;
+    
+    /* Spacing & Sizing */
+    --hero-padding: 20px;
+    --content-max-width: 1100px;
+    --hero-margin-top: 120px;
+    
+    /* Grid Settings */
+    --tile-size: 24px;
+    --tile-gutter: 12px;
+    
+    /* Animation Durations */
+    --grid-fade-duration: 700ms;
+    --check-tile-duration: 500ms;
+    --hover-transition: 0.3s;
+    
+    /* Responsive Breakpoints */
+    --tablet-breakpoint: 768px;
+    --mobile-breakpoint: 480px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    :root {
+        --hero-margin-top: 80px;
+        --hero-padding: 16px;
+        --grid-opacity: 0.45;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --hero-margin-top: 60px;
+        --tile-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

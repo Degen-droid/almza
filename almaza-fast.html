@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almaza - Fast Test Version</title>
+    <style>
+        /* Inline CSS for faster loading */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Trust Bar Section */
+        .trust-bar {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .trust-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 200px;
+        }
+        
+        .testimonial-text {
+            font-size: clamp(18px, 3.5vw, 28px);
+            color: #fff;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            text-align: center;
+        }
+        
+        /* Keep text on one line for large screens (769px and above) */
+        @media (min-width: 769px) {
+            .testimonial-text {
+                white-space: nowrap;
+            }
+        }
+        
+        .testimonial-author {
+            font-size: clamp(12px, 1.6vw, 14px);
+            color: #71717a;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background: #0a0a0a;
+            padding: 80px 0;
+            margin-top: 0;
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .testimonials-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .testimonials-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .testimonial-card {
+            padding: clamp(20px, 3vw, 28px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, transparent 100%) 1;
+            border-top-left-radius: clamp(12px, 2vw, 16px);
+            border-bottom-left-radius: clamp(12px, 2vw, 16px);
+            max-width: 300px;
+            flex: 1;
+        }
+        
+        .testimonial-text {
+            font-family: 'Quicksand', sans-serif;
+            font-size: clamp(16px, 4vw, 18px);
+            color: #e0e0e0;
+            line-height: 1.6;
+            text-align: left;
+            margin-left: 0;
+            font-weight: 400;
+            font-style: italic;
+            width: 100%;
+        }
+        
+        /* Optimized sizing for larger screens */
+        @media (min-width: 769px) {
+            .testimonial-text {
+                font-size: clamp(18px, 2vw, 22px);
+            }
+        }
+        
+        .testimonial-author {
+            font-size: clamp(14px, 2vw, 16px);
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        
+        .testimonial-stars {
+            color: #ffd700;
+            font-size: clamp(16px, 2.5vw, 20px);
+            margin-bottom: 12px;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .trust-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .testimonials-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .testimonial-card {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Trust Bar Section -->
+    <section class="trust-bar">
+        <div class="trust-container">
+            <!-- Testimonial -->
+            <div class="trust-item testimonial-item">
+                <div class="testimonial-text">"Finally, a card that just works"</div>
+                <div class="testimonial-author">- Sarah M, London</div>
+            </div>
+            
+            <!-- Featured In -->
+            <div class="trust-item featured-item">
+                <div class="featured-label">Featured in</div>
+                <div class="featured-logo">
+                    <div style="background: #f8fafc; color: #1e293b; padding: 8px 16px; border-radius: 4px; font-weight: 700; font-size: 12px;">TechCrunch</div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="trust-item stats-item">
+                <div class="stats-content">
+                    <div class="stat-box">
+                        <div class="stat-number">100k+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">195+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <h2 class="testimonials-title">What Our Users Say</h2>
+            <div class="testimonials-content">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Security features won me over. Real-time fraud alerts give me peace of mind."
+                    </div>
+                    <div class="testimonial-author">James Ochieng</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Saved me from currency conversion nightmares."
+                    </div>
+                    <div class="testimonial-author">David Kamau</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Almaza changed international payments for me."
+                    </div>
+                    <div class="testimonial-author">Sarah Mwangi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
