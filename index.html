@@ -296,28 +296,13 @@
             left: clamp(-200px, -20vw, -100px);
             top: 50%;
             transform: translateY(calc(-50% + var(--whirl-offset-left, 0px)));
-            width: clamp(500px, 70vw, 1000px);
-            height: clamp(500px, 70vw, 1000px);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.12) 50%, transparent 80%);
+            width: clamp(550px, 75vw, 1100px);
+            height: clamp(550px, 75vw, 1100px);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.20) 50%, transparent 80%);
             border-radius: 50%;
             filter: blur(120px);
-            opacity: 0.9;
+            opacity: 1;
             mix-blend-mode: screen;
-            z-index: 0;
-        }
-        
-        .whirl-right {
-            position: fixed;
-            right: clamp(-200px, -20vw, -100px);
-            top: 50%;
-            transform: translateY(calc(-50% + var(--whirl-offset-right, 0px)));
-            width: clamp(480px, 60vw, 900px);
-            height: clamp(480px, 60vw, 900px);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 50%, transparent 80%);
-            border-radius: 50%;
-            filter: blur(160px);
-            opacity: 0.18;
-            mix-blend-mode: normal;
             z-index: 0;
         }
         
@@ -5924,7 +5909,6 @@
 <body>
     <div class="bg-whirls" aria-hidden="true">
         <div class="whirl-left"></div>
-        <div class="whirl-right"></div>
     </div>
     <div class="hero">
         <!-- Background whirls moved to global container -->
@@ -8716,13 +8700,11 @@
             
             // Background whirls parallax across the whole page
             const whirlLeftEl = document.querySelector('.bg-whirls .whirl-left');
-            const whirlRightEl = document.querySelector('.bg-whirls .whirl-right');
-            if (whirlLeftEl && whirlRightEl) {
+            if (whirlLeftEl) {
                 const updateWhirls = () => {
                     const y = window.scrollY || document.documentElement.scrollTop || 0;
                     // Subtle, performance-friendly parallax
                     whirlLeftEl.style.setProperty('--whirl-offset-left', `${y * 0.10}px`);
-                    whirlRightEl.style.setProperty('--whirl-offset-right', `${y * 0.06}px`);
                 };
                 updateWhirls();
                 window.addEventListener('scroll', updateWhirls, { passive: true });
