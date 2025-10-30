@@ -368,6 +368,22 @@
                 outline-color: rgba(255,255,255,0.07);
             }
         }
+
+        /* Apply the same stronger visibility on small screens */
+        @media (max-width: 768px) {
+            .whirl-left { opacity: 0.5; }
+            .hero .grid { mask: linear-gradient(to bottom, black 0%, rgba(0,0,0,0.35) 60%, transparent 100%); }
+            .hero .grid-box {
+                background: #141719;
+                opacity: 1;
+                box-shadow: 0 0 8px rgba(255,255,255,0.04);
+                outline: 1px solid rgba(255,255,255,0.05);
+            }
+            .hero .grid-box.bright {
+                background: #1B2023;
+                outline-color: rgba(255,255,255,0.07);
+            }
+        }
         
         /* Main container */
         .container {
