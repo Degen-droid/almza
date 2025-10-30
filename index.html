@@ -298,16 +298,16 @@
             transform: translateY(calc(-50% + var(--whirl-offset-left, 0px)));
             width: clamp(550px, 75vw, 1100px);
             height: clamp(550px, 75vw, 1100px);
-            background: radial-gradient(
-                circle,
-                rgba(255, 255, 255, 0.55) 0%,
-                rgba(255, 255, 255, 0.28) 35%,
-                rgba(255, 255, 255, 0.12) 60%,
-                rgba(255, 255, 255, 0.06) 75%,
-                rgba(255, 255, 255, 0.00) 100%
-            );
+            /* Layered gradients to form visible whirls (spiral arms) */
+            background:
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.60) 0%, rgba(255,255,255,0.28) 35%, rgba(255,255,255,0.10) 65%, rgba(255,255,255,0.00) 100%),
+                repeating-conic-gradient(from 0deg,
+                    rgba(255,255,255,0.16) 0deg 10deg,
+                    rgba(255,255,255,0.00) 10deg 30deg
+                );
+            background-blend-mode: screen;
             border-radius: 50%;
-            filter: blur(140px);
+            filter: blur(120px);
             opacity: 1;
             mix-blend-mode: screen;
             /* Feather the very outer edge to avoid visible ring */
