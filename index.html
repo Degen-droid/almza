@@ -354,6 +354,20 @@
             background: #2E3437;
             box-shadow: 0 0 10px rgba(255,255,255,0.06);
         }
+
+        /* Make grid boxes (checkboxes) appear darker/more defined on large screens */
+        @media (min-width: 1440px) {
+            .hero .grid-box {
+                background: #141719;
+                opacity: 1;
+                box-shadow: 0 0 8px rgba(255,255,255,0.04);
+                outline: 1px solid rgba(255,255,255,0.05);
+            }
+            .hero .grid-box.bright {
+                background: #1B2023;
+                outline-color: rgba(255,255,255,0.07);
+            }
+        }
         
         /* Main container */
         .container {
