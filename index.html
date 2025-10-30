@@ -295,7 +295,7 @@
             position: fixed;
             left: clamp(-200px, -20vw, -100px);
             top: 50%;
-            transform: translateY(calc(-50% + var(--whirl-offset-left, 0px)));
+            transform: translateY(-50%);
             width: clamp(550px, 75vw, 1100px);
             height: clamp(550px, 75vw, 1100px);
             background:
@@ -8709,19 +8709,7 @@
         // Initialize scroll animations when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new ScrollAnimationController();
-            
-            // Background whirls parallax across the whole page
-            const whirlLeftEl = document.querySelector('.bg-whirls .whirl-left');
-            if (whirlLeftEl) {
-                const updateWhirls = () => {
-                    const y = window.scrollY || document.documentElement.scrollTop || 0;
-                    // Subtle, performance-friendly parallax
-                    whirlLeftEl.style.setProperty('--whirl-offset-left', `${y * 0.10}px`);
-                };
-                updateWhirls();
-                window.addEventListener('scroll', updateWhirls, { passive: true });
-            }
-            
+
             // Perfect text animation - split words and setup scroll trigger
             const perfectTextElements = document.querySelectorAll('.perfect-text-animation');
             perfectTextElements.forEach(element => {
