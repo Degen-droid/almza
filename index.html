@@ -289,19 +289,21 @@
             right: 0;
             bottom: 0;
             pointer-events: none;
-            z-index: -1;
+            z-index: 0;
         }
         .whirl-left {
             position: fixed;
             left: clamp(-200px, -20vw, -100px);
             top: 50%;
             transform: translateY(calc(-50% + var(--whirl-offset-left, 0px)));
-            width: clamp(400px, 60vw, 800px);
-            height: clamp(400px, 60vw, 800px);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 80%);
+            width: clamp(500px, 70vw, 1000px);
+            height: clamp(500px, 70vw, 1000px);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.12) 50%, transparent 80%);
             border-radius: 50%;
-            filter: blur(100px);
-            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.9;
+            mix-blend-mode: screen;
+            z-index: 0;
         }
         
         .whirl-right {
@@ -309,12 +311,14 @@
             right: clamp(-200px, -20vw, -100px);
             top: 50%;
             transform: translateY(calc(-50% + var(--whirl-offset-right, 0px)));
-            width: clamp(400px, 60vw, 800px);
-            height: clamp(400px, 60vw, 800px);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 80%);
+            width: clamp(500px, 70vw, 1000px);
+            height: clamp(500px, 70vw, 1000px);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.10) 50%, transparent 80%);
             border-radius: 50%;
-            filter: blur(100px);
-            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.85;
+            mix-blend-mode: screen;
+            z-index: 0;
         }
         
         /* Grid - Only for hero section */
