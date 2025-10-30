@@ -298,11 +298,21 @@
             transform: translateY(calc(-50% + var(--whirl-offset-left, 0px)));
             width: clamp(550px, 75vw, 1100px);
             height: clamp(550px, 75vw, 1100px);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.20) 50%, transparent 80%);
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.55) 0%,
+                rgba(255, 255, 255, 0.28) 35%,
+                rgba(255, 255, 255, 0.12) 60%,
+                rgba(255, 255, 255, 0.06) 75%,
+                rgba(255, 255, 255, 0.00) 100%
+            );
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(140px);
             opacity: 1;
             mix-blend-mode: screen;
+            /* Feather the very outer edge to avoid visible ring */
+            -webkit-mask-image: radial-gradient(circle, rgba(255,255,255,1) 72%, rgba(255,255,255,0) 100%);
+            mask-image: radial-gradient(circle, rgba(255,255,255,1) 72%, rgba(255,255,255,0) 100%);
             z-index: 0;
         }
         
