@@ -281,33 +281,40 @@
             z-index: 1;
         }
         
-        /* Background whirls */
+        /* Background whirls - global, fixed across page */
+        .bg-whirls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
         .whirl-left {
-            position: absolute;
+            position: fixed;
             left: clamp(-200px, -20vw, -100px);
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(calc(-50% + var(--whirl-offset-left, 0px)));
             width: clamp(400px, 60vw, 800px);
             height: clamp(400px, 60vw, 800px);
             background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 80%);
             border-radius: 50%;
             filter: blur(100px);
-            z-index: -3;
-            overflow: hidden;
+            z-index: -1;
         }
         
         .whirl-right {
-            position: absolute;
+            position: fixed;
             right: clamp(-200px, -20vw, -100px);
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(calc(-50% + var(--whirl-offset-right, 0px)));
             width: clamp(400px, 60vw, 800px);
             height: clamp(400px, 60vw, 800px);
             background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 80%);
             border-radius: 50%;
             filter: blur(100px);
-            z-index: -3;
-            overflow: hidden;
+            z-index: -1;
         }
         
         /* Grid - Only for hero section */
@@ -5911,10 +5918,12 @@
     </style>
 </head>
 <body>
-    <div class="hero">
-        <!-- Background whirls -->
+    <div class="bg-whirls" aria-hidden="true">
         <div class="whirl-left"></div>
         <div class="whirl-right"></div>
+    </div>
+    <div class="hero">
+        <!-- Background whirls moved to global container -->
         
         <!-- Grid -->
         <div class="grid" id="grid"></div>
@@ -8700,6 +8709,20 @@
         // Initialize scroll animations when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new ScrollAnimationController();
+            
+            // Background whirls parallax across the whole page
+            const whirlLeftEl = document.querySelector('.bg-whirls .whirl-left');
+            const whirlRightEl = document.querySelector('.bg-whirls .whirl-right');
+            if (whirlLeftEl && whirlRightEl) {
+                const updateWhirls = () => {
+                    const y = window.scrollY || document.documentElement.scrollTop || 0;
+                    // Subtle, performance-friendly parallax
+                    whirlLeftEl.style.setProperty('--whirl-offset-left', `${y * 0.10}px`);
+                    whirlRightEl.style.setProperty('--whirl-offset-right', `${y * 0.06}px`);
+                };
+                updateWhirls();
+                window.addEventListener('scroll', updateWhirls, { passive: true });
+            }
             
             // Perfect text animation - split words and setup scroll trigger
             const perfectTextElements = document.querySelectorAll('.perfect-text-animation');
